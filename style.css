@@ -1,0 +1,59 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #260233;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white; /* Agrega color blanco al texto en general */
+}
+
+h1 {
+  margin-bottom: 550px; /* Ajusta este valor según tus necesidades */
+}
+
+h2 {
+  /* No es necesario repetir la propiedad color para h2 si ambos van a tener el mismo color */
+}
+
+.heart {
+  height: 70px;
+  width: 70px;
+  background-color: #ee0d0d;
+  position: relative;
+  box-shadow: 10px 10px 90px #ee0d0d;
+  animation: animHeart 5s linear infinite;
+}
+
+@keyframes animHeart {
+  0% {
+    transform: rotate(45deg) scale(3);
+  }
+  100% {
+    transform: rotate(360deg) scale(2);
+  }
+}
+
+.heart::before {
+  content: "";
+  position: absolute;
+  height: 70px;
+  width: 70px;
+  background-color: #ee0d0d;
+  box-shadow: -10px 10px 90px #ee0d0d;
+  top: -50%;
+  border-radius: 50%;
+}
+
+.heart::after {
+  content: '';
+  position: absolute;
+  box-shadow: 10px -10px 90px #ee0d0d;
+  height: 70px;
+  width: 70px;
+  background-color: #ee0d0d;
+  right: -50%;
+  border-radius: 50%;
+}
